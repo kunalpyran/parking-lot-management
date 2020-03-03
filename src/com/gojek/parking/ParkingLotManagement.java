@@ -31,6 +31,7 @@ public class ParkingLotManagement {
 			BufferedReader br = new BufferedReader(new FileReader(file));
 			String query;
 			ParkingLotManagement parking = null;
+			boolean exitFlag = false;
 			while ((query = br.readLine()) != null) {
 				if(Objects.nonNull(query)) {
 					String[] queryData = query.split(" ");
@@ -81,10 +82,16 @@ public class ParkingLotManagement {
 							System.out.println("[ParkingLotManagement][Main] Invalid No of Parameters for " + Constants.SLOT_NO_BY_REG);
 						}
 						break;
+					case Constants.EXIT:
+						exitFlag = true;
+						break;
 					default:
 						System.out.println("[ParkingLotManagement][Main] Invalid Input");
 						break;
 					}
+				}
+				if(exitFlag) {
+					break;
 				}
 			}
 		} catch (Exception e) {
