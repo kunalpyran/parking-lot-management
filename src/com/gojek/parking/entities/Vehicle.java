@@ -2,7 +2,7 @@ package com.gojek.parking.entities;
 
 import com.gojek.parking.enums.ColorEnum;
 
-public class Vehicles {
+public class Vehicle {
 
 	private String registrationNumber;
 	private ColorEnum color;
